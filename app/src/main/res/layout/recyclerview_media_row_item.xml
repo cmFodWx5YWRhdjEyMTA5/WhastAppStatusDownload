@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewVideoMedia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/videoViewVideoMedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/play"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_play_circle_outline_black_24dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/pause"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_pause_circle_outline_black_24dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/buttonVideoDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom|right"
+            android:layout_marginEnd="21dp"
+            android:layout_marginRight="21dp"
+            android:text="Download" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/videosize"
+            android:layout_margin="10dp"
+            android:layout_gravity="bottom|end"
+            android:text="12mb"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/cardViewImageMedia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/imageViewImageMedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/gallery_thumb" />
+        <Button
+            android:visibility="gone"
+            android:id="@+id/buttonImageDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom|right"
+            android:layout_marginEnd="21dp"
+            android:layout_marginRight="21dp"
+            android:text="Download" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/imgsize"
+            android:layout_margin="10dp"
+            android:layout_gravity="bottom|end"
+            android:text="12mb"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

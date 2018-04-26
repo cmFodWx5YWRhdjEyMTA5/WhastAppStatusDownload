@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "782671137539",
+    "firebase_url": "https://whastappstatusdownload.firebaseio.com",
+    "project_id": "whastappstatusdownload",
+    "storage_bucket": "whastappstatusdownload.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782671137539:android:3ae895df8f7a3863",
+        "android_client_info": {
+          "package_name": "ravi.com.whastappstatusdownload"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782671137539-o3dq7j893kgrr5cmpkf5hdtsjuidrsva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ravi.com.whastappstatusdownload",
+            "certificate_hash": "b179a5bcdcf130ad11e0b1409122459e273aac9f"
+          }
+        },
+        {
+          "client_id": "782671137539-c078a3sfo4muisu085gdohg51j19tadh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfSpfy61L2qss2nXekALWE1qW84tjBUxw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782671137539-c078a3sfo4muisu085gdohg51j19tadh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
