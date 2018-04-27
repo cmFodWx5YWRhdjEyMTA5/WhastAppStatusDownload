@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +31,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+import ravi.com.whastappstatusdownload.BuildConfig;
 import ravi.com.whastappstatusdownload.Common;
 import ravi.com.whastappstatusdownload.HomeActivity;
 import ravi.com.whastappstatusdownload.Model.ImgModel;
@@ -106,7 +108,7 @@ public class VideoPlayActivity extends AppCompatActivity {
         {
             Log.i("CreateDir","App dir already exists");
         }
-        String destinationFilename = Environment.getExternalStorageDirectory().getAbsolutePath()+"/WSDownload/"+model.getName();
+        String destinationFilename = yourAppDir+model.getName();
         BufferedInputStream bis = null;
         BufferedOutputStream bos = null;
         try {
@@ -140,6 +142,7 @@ public class VideoPlayActivity extends AppCompatActivity {
                         .setContentText("Whatsapp video status download complated");
         Intent notificationIntent = new Intent(Intent.ACTION_GET_CONTENT);
         notificationIntent.setAction(android.content.Intent.ACTION_VIEW);
+//        Uri uri = FileProvider.getUriForFile(VideoPlayActivity.this, BuildConfig.APPLICATION_ID + ".provider",yourAppDir);
         notificationIntent.setDataAndType(Uri.fromFile(yourAppDir), "resource/folder");
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
