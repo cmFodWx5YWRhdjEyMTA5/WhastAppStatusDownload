@@ -8,4 +8,20 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="APP_ID">ca-app-pub-8266787382728938~8919052291</string>
+
+     <!--Test Ads Id -->
+    <string name="Banner">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="Interstitial">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="RewardedVideo">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="NativeAds">ca-app-pub-3940256099942544/8135179316</string>
+
+    <!-- Final Ads Id frome Tp007143007 account -->
+    <!--<string name="Banner">ca-app-pub-8266787382728938/4897103034</string>-->
+    <!--<string name="Interstitial">ca-app-pub-8266787382728938/7964777868</string>-->
+    <!--<string name="RewardedVideo">ca-app-pub-8266787382728938/5721757906</string>-->
+
+
+
 </resources>

@@ -1,0 +1,36 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ravi.com.whastappstatusdownload.ImageFragment1"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:layout_gravity="center"
+        android:src="@drawable/ic_share_black_24dp"
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="NIK" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/buttonImageDownload"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_file_download_black_24dp"
+        android:tint="#ffffff"
+        app:fabSize="auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <android.support.design.widget.FloatingActionButton
+        android:layout_gravity="bottom"
+        android:layout_margin="5dp"
+        app:fabSize="auto"
+        android:tint="#ffffff"
+        android:id="@+id/share"
+        android:src="@drawable/ic_share_black_24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</FrameLayout>

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,7 +21,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import ravi.com.whastappstatusdownload.Common;
+import ravi.com.whastappstatusdownload.Activity.HomeActivity;
+import ravi.com.whastappstatusdownload.Common.Common;
 import ravi.com.whastappstatusdownload.Model.VideoModel;
 import ravi.com.whastappstatusdownload.R;
 import ravi.com.whastappstatusdownload.Activity.VideoPlayActivity;
@@ -32,7 +34,6 @@ import ravi.com.whastappstatusdownload.Activity.VideoPlayActivity;
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.FileHolder> {
     private static final String TAG = "Adapter";
     public Context mContext;
-    private static String DIRECTORY_TO_SAVE_MEDIA_NOW = "/WSDownloader/";
     private Activity activity;
 
     private List<VideoModel> list = new ArrayList<>();
@@ -43,15 +44,16 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.FileHolder> 
         this.list = list;
     }
 
+    @NonNull
     @Override
-    public VideoAdapter.FileHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public VideoAdapter.FileHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflatedView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recyclerview_media_row_item, parent, false);
         return new VideoAdapter.FileHolder(inflatedView);
     }
 
     @Override
-    public void onBindViewHolder(final FileHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final FileHolder holder, int position) {
         final VideoModel currentFile =(VideoModel) list.get(position);
 //        holder.buttonVideoDownload.setOnClickListener(this.downloadMediaItem(currentFile));
         Log.e(TAG, "onBindViewHolder: " +currentFile.getName());
@@ -63,38 +65,12 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.FileHolder> 
         Bitmap thumb = ThumbnailUtils.createVideoThumbnail(currentFile.getPath(),MediaStore.Images.Thumbnails.MINI_KIND);
 
         holder.videoViewVideoMedia.setImageBitmap(thumb);
-//        holder.play.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Uri video = Uri.parse(currentFile.getPath());
-//                holder.videoViewVideoMedia.setVideoURI(video);
-//                holder.videoViewVideoMedia.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//                    @Override
-//                    public void onPrepared(MediaPlayer mp) {
-//                        mp.setLooping(false);
-//                        holder.play.setVisibility(View.GONE);
-//                        holder.pause.setVisibility(View.VISIBLE);
-//                        holder.videoViewVideoMedia.start();
-//                    }
-//                });
-//            }
-//        });
-//        holder.pause.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                holder.play.setVisibility(View.VISIBLE);
-//                holder.pause.setVisibility(View.GONE);
-//                holder.videoViewVideoMedia.stopPlayback();
-//            }
-//        });
-
 
         holder.videosize.setText(getFileSize(currentFile.getSize()));
 
         holder.cardViewVideoMedia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(activity, VideoPlayActivity.class);
                 Common.selectedVideo = currentFile;
                 mContext.startActivity(intent);
@@ -108,7 +84,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.FileHolder> 
     public int getItemCount() {
         return list.size();
     }
-    public static String getFileSize(long size) {
+    private static String getFileSize(long size) {
         if (size <= 0)
             return "0";
         final String[] units = new String[] { "B", "KB", "MB", "GB", "TB" };
@@ -145,4 +121,5 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.FileHolder> 
         }
 
     }
+
 }
